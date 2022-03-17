@@ -43,7 +43,6 @@ def launch():
 
             if today != page_date:
                 today = page_date
-                telegram_utils.send_message(f"Nuovo giorno: {today}")
                 unavailable_slots.clear()
                 silent_update = True
 
@@ -61,12 +60,11 @@ def launch():
                         if not silent_update:
                             message = f"Lo slot delle ore {time_slot} non è più disponibile"
                             telegram_utils.send_message(message)
-                        else:
-                            silent_update = True
                 except NoSuchElementException:
                     if time_slot in unavailable_slots:
                         unavailable_slots.remove(time_slot)
                         message = f"Nuovo slot disponibile per le ore {time_slot}"
                         telegram_utils.send_message(message)
                     continue
+            silent_update = False
         time.sleep(120)
