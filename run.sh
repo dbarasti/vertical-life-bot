@@ -6,4 +6,4 @@ export $(grep -v '^#' .env | xargs)
 # enable venv
 source venv/bin/activate
 
-python3 runner.sh
+python3 runner.py
