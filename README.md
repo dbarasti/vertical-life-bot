@@ -14,12 +14,12 @@ I needed a Telegram bot to notify me when somebody cancelled their booking at th
 ### Installing
 
 * clone the repository
-* run `sh install.sh` (requires`venv` and `pip3`)
+* run `bash install.sh` (requires`venv` and `pip3`)
 * `cp .env.exaple .end` to create a .env file. Fill the file as appropriate
 
 ### Executing program
 
-* run `sh run.sh`
+* run `bash run.sh`
 
 
 ## Version History
