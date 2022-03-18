@@ -22,6 +22,7 @@ def launch():
     driver = webdriver.Firefox(options=options)
     today = ""
     unavailable_slots = set()
+    silent_update = True
 
     while True:
         driver.get(CHECKINS_URL)
@@ -29,7 +30,6 @@ def launch():
         slots = driver.find_elements_by_xpath(
             "//div[contains(@class, 'row') and contains(@class, 'align-items-center')]"
         )
-        silent_update = True
         if len(slots) > 4:
             # remove useless content
             slots = slots[4:]
