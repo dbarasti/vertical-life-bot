@@ -4,7 +4,7 @@ It keeps track of the available spots. In particular, it there is a change from 
 it sends a message on the telegram channel with the appropriate details.
 '''
 import telegram_utils
-import logger
+from logger import logging
 import time
 import os
 from selenium import webdriver
@@ -39,7 +39,7 @@ def launch():
                 page_date = slots[0].find_element(by=By.CLASS_NAME,
                                                   value="mb-1").text
             except NoSuchElementException:
-                logger.warning('could not find page date')
+                logging.warning('could not find page date')
 
             if today != page_date:
                 today = page_date
@@ -59,12 +59,20 @@ def launch():
                         unavailable_slots.add(time_slot)
                         if not silent_update:
                             message = f"Lo slot delle ore {time_slot} non è più disponibile"
-                            telegram_utils.send_message(message)
+                            try:
+                                telegram_utils.send_message(message)
+                            except Exception:
+                                logging.error(
+                                    'error while sending telegram message')
                 except NoSuchElementException:
                     if time_slot in unavailable_slots:
                         unavailable_slots.remove(time_slot)
                         message = f"Nuovo slot disponibile per le ore {time_slot}"
-                        telegram_utils.send_message(message)
+                        try:
+                            telegram_utils.send_message(message)
+                        except Exception:
+                            logging.error(
+                                'error while sending telegram message')
                     continue
             silent_update = False
         time.sleep(120)
