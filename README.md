@@ -9,7 +9,8 @@ I needed a Telegram bot to notify me when somebody cancelled their booking at th
 * python3
 * pip
 * venv
-* a valid installation of a webdriver (e.g. [geckodriver](https://github.com/mozilla/geckodriver/releases))
+* firefox
+* a valid installation of [geckodriver](https://github.com/mozilla/geckodriver/releases)
 
 ### Installing
 
