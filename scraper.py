@@ -18,6 +18,12 @@ CHECKINS_URL = os.environ.get('CHECKINS_URL')
 def launch():
     options = ChromiumOptions()
     options.headless = True
+    options.add_argument("enable-automation")
+    options.add_argument("--window-size=1920,1080")
+    options.add_argument("--disable-gpu")
+    options.add_argument("--dns-prefetch-disable")
+    options.add_argument("--no-sandbox")
+    options.add_argument("--disable-extensions")
     logging.info("starting chromium driver")
     driver = webdriver.Chrome(options=options)
     logging.info("correctly obtained a driver")
