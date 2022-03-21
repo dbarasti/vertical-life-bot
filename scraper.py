@@ -10,16 +10,17 @@ import os
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
-from selenium.webdriver.firefox.options import Options
+from selenium.webdriver.chromium.options import ChromiumOptions
 
 CHECKINS_URL = os.environ.get('CHECKINS_URL')
 
 
 def launch():
-    options = Options()
+    options = ChromiumOptions()
     options.headless = True
-
-    driver = webdriver.Firefox(options=options)
+    logging.info("starting chromium driver")
+    driver = webdriver.Chrome(options=options)
+    logging.info("correctly obtained a driver")
     today = ""
     unavailable_slots = set()
     silent_update = True
