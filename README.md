@@ -5,22 +5,22 @@ I needed a Telegram bot to notify me when somebody cancelled their booking at th
 ## Getting Started
 
 ### Dependencies
-
+Please be sure that these dependencies are installed and at their last stable version
 * python3
 * pip
 * venv
-* firefox
-* a valid installation of [geckodriver](https://github.com/mozilla/geckodriver/releases)
+* Google Chrome (alternatively Chromium)
+* a valid installation of [ChromeDriver](https://chromedriver.chromium.org)
 
 ### Installing
 
 * clone the repository
-* run `bash install.sh` (requires`venv` and `pip3`)
+* run `make` to install requirements (requires`venv` and `pip3`)
 * `cp .env.exaple .end` to create a .env file. Fill the file as appropriate
 
 ### Executing program
 
-* run `bash run.sh`
+* run `make run`
 
 
 ## Version History
