@@ -32,7 +32,7 @@ class Session:
             if not slot.is_available and slot.time not in self.unavailable_slots:
                 self.unavailable_slots.add(slot.time)
                 if not self.silent_update:
-                    message = f"Lo slot delle ore {self.time} non è più disponibile"
+                    message = f"Lo slot delle ore {slot.time} non è più disponibile"
                     try:
                         telegram_utils.send_message(message)
                     except Exception:
