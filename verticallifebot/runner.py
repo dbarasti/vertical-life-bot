@@ -1,5 +1,4 @@
 from dotenv import load_dotenv
-
 from verticallifebot.scraper import launch
 from verticallifebot.logger import logging
 import sys
