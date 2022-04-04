@@ -10,8 +10,9 @@ load_dotenv()
 def main():
     try:
         launch()
-    except Exception:
+    except Exception as e:
         logging.error("Error executing application. Shutting down...")
+        logging.exception(e)
         sys.exit()
 
 
