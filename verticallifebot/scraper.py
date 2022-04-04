@@ -33,9 +33,8 @@ def launch():
         # send slots to handler module
         try:
             handler.handle_page(driver)
-        except Exception as e:
+        except Exception:
             logging.error("Error while parsing page")
-            logging.exception(e)
 
         time.sleep(UPDATE_INTERVAL)
 
