@@ -11,7 +11,9 @@ def setup():
 
 def send_message(message):
     global bot
-    bot.send_message(text=message, chat_id=os.environ.get('MY_CHAT_ID'))
+    bot.send_message(text=message,
+                     chat_id=os.environ.get('MY_CHAT_ID'),
+                     parse_mode='markdown')
 
 
 def send_photo(photo):
