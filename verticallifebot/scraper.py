@@ -27,7 +27,12 @@ def launch():
 
     while True:
         logging.info("Loading page")
-        driver.get(CHECKINS_URL)
+        try:
+            driver.get(CHECKINS_URL)
+        except Exception:
+            logging.warn("Unable to get page. Will retry next time")
+            time.sleep(UPDATE_INTERVAL)
+            continue
         time.sleep(5)
 
         # send slots to handler module
