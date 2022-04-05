@@ -22,7 +22,7 @@ def launch():
     try:
         driver = setup_driver()
     except:
-        logging.error("Unable to create driver. Shutting down...")
+        logging.fatal("Unable to create driver. Shutting down...")
         sys.exit()
 
     while True:
@@ -39,7 +39,7 @@ def launch():
         try:
             handler.handle_page(driver)
         except Exception:
-            logging.error("Error while parsing page")
+            logging.warn("Content not found in page. Skipping...")
 
         time.sleep(UPDATE_INTERVAL)
 
