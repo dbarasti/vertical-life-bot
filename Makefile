@@ -5,6 +5,9 @@ install: requirements.txt
 run:
 	bash run.sh
 
+dev:
+	./autoreload bash run.sh
+
 test: venv
 	. venv/bin/activate; pytest
 
