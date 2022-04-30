@@ -1,6 +1,6 @@
 # Vertical Life Telegram bot
 
-I needed a Telegram bot to notify me when somebody cancelled their booking at the gym. Here's the code. It is currently compatible with the [Vertical Life](https://www.vertical-life.info/) booking system and it is at the first stages of prototyping.
+I needed a Telegram bot to notify me when somebody cancelled their booking at the gym. Here's the code. It is currently compatible with the [Vertical Life](https://www.vertical-life.info/) booking system and it is at the first stages of prototyping. If you'd like to see what the end result will look like, visit the telegram channel [intellichannel](https://t.me/intellichannel); this is my implementation of this project, currently used by members of the [intellighenzia project](https://www.intellighenziaproject.it/) gym.
 
 ## Getting Started
 
