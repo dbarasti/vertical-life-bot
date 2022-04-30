@@ -26,7 +26,9 @@ Please be sure that these dependencies are installed and at their last stable ve
 
 If you want to test new features in development mode, you can use the `make dev` command to enable autoreload of the program for the best development experience. Many thanks to @stevekrenzel for his Python [autoreload project](https://github.com/stevekrenzel/autoreload)
 
+<img src="res/vertical-life-bot.png" alt="drawing" width="600"/>
 
+The architecture schema above shows what the pipeline looks like.
 ## Version History
 
 * 0.1
