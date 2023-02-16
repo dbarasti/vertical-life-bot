@@ -25,14 +25,14 @@ class Session:
         try:
             telegram_utils.send_message(message)
         except Exception:
-            logging.warn('Error while sending telegram message')
+            logging.error('Error while sending telegram message')
 
     def communicate_unavailability(self, time):
         message = f"Lo slot delle ore {time} non è più disponibile"
         try:
             telegram_utils.send_message(message)
         except Exception:
-            logging.warn('Error while sending telegram message')
+            logging.error('Error while sending telegram message')
 
     def track_changes(self, day: Optional[str], slots: List[Slot]):
         if day is not None and self.current_day != day:

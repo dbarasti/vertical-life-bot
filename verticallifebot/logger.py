@@ -6,7 +6,7 @@ TEST = os.environ.get('TEST')
 if TEST == 'True':
     logging_level = logging.INFO
 else:
-    logging_level = logging.WARN
+    logging_level = logging.ERROR
 
 logging.basicConfig(format='%(asctime)s %(levelname)-8s %(message)s',
                     level=logging_level,
